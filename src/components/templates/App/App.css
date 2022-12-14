@@ -1,3 +1,12 @@
+.app-displayer-external-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa;
+}
+
 .app-displayer-container {
   width: 600px;
 }

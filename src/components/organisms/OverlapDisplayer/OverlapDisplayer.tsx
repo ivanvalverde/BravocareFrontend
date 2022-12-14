@@ -1,5 +1,5 @@
 import React from "react";
-import { TEXTS } from "../../../utils/enums";
+import { TEXTS } from "../../../utils";
 import './OverlapDisplayer.css';
 
 interface IOverlapDisplayerProps {

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { OverlapShifts, Shifts, ShiftsResponse } from "../../../utils/types";
+import { APIResponse, OverlapShifts, Shifts } from "../../../utils";
+import QuestionsContainer from "../../molecules/QuestionsContainer";
 import OverlapDisplayer from "../../organisms/OverlapDisplayer";
 import ShiftCard from "../../organisms/ShiftCard";
 import "./App.css";
@@ -15,7 +16,7 @@ export const App = (): JSX.Element => {
   useEffect(() => {
     const getShifts = async () => {
       try {
-        const { data } = await axios.get<ShiftsResponse<Shifts[]>>(
+        const { data } = await axios.get<APIResponse<Shifts[]>>(
           "http://localhost:3001/shifts"
         );
         setShifts(data.data);
@@ -41,7 +42,7 @@ export const App = (): JSX.Element => {
   const handleClickSubmitBtn = () => {
     const getOverlapShifts = async () => {
       try {
-        const { data } = await axios.get<ShiftsResponse<OverlapShifts>>(
+        const { data } = await axios.get<APIResponse<OverlapShifts>>(
           `http://localhost:3001/shifts/overlap?firstShift=${
             shifts[selectedCardNumbers[0]].shift_id
           }&secondShift=${shifts[selectedCardNumbers[1]].shift_id}`
@@ -55,7 +56,7 @@ export const App = (): JSX.Element => {
   };
 
   return (
-    <div>
+    <div className="app-displayer-external-container">
       <div className="app-displayer-container">
         <OverlapDisplayer
           exceedsOverlapThreshold={
@@ -90,6 +91,7 @@ export const App = (): JSX.Element => {
           ))}
         </div>
       </div>
+      <QuestionsContainer />
     </div>
   );
 };

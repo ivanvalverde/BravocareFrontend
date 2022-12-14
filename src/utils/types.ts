@@ -7,7 +7,7 @@ export type Shifts = {
   end_time: string;
 };
 
-export type ShiftsResponse<T> = {
+export type APIResponse<T> = {
   statusCode: number;
   error: boolean;
   message: string;
@@ -19,3 +19,18 @@ export type OverlapShifts = {
   overlapTime: number;
   exceedsOverlapThreshold: boolean;
 };
+
+export type RemainingSpots = {
+  facility_id: number;
+  nurse_type: string;
+  nurses_needed: string;
+};
+
+export type CoWorkers = {
+  'co-workers': string;
+}
+
+export type Button = {
+  text: string;
+  action: () => void;
+}
