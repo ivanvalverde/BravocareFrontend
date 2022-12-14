@@ -1,0 +1,32 @@
+.shiftcard-container {
+    padding: 20px;
+    border: solid 3px #000000;
+    border-radius: 2px;
+    font-family: 'Yusei Magic', sans-serif;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.shiftcard-container:hover {
+    background-color: #E5E4E2;
+    transition: 0.3s;
+}
+
+.shiftcard-container p{
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.shiftcard-time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected:hover {
+    background-color: #5b88b1;
+}
+
+.selected {
+    background-color: #6fa8dc;
+}
